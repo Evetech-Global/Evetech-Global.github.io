@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Evetech Global</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #e5e5e5; /* Light grey background */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #004e5f; /* Dark turquoise from the logo */
+            color: #d9d9d9; /* Metallic tone for text */
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #d9d9d9; /* Metallic tone for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #a1ecf7; /* Lighter turquoise for hover effect */
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #a1ecf7, #00707f); /* Gradient using shades from the logo */
+            color: white;
+        }
+
+        section {
+            margin: 20px;
+            padding: 40px;
+            background-color: #fff; /* White background for contrast */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            background-image: linear-gradient(to bottom right, #f0f9f9, #cfe7e6); /* Subtle background gradient for middle sections */
+        }
+
+        footer {
+            background-color: #004e5f; /* Footer background color */
+            color: #d9d9d9; /* Text color */
+            padding: 40px 0; /* Top and Bottom padding */
+            font-size: 0.8em;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-section {
+            margin: 10px;
+            min-width: 150px;
+        }
+        .footer-section h3 {
+            color: #a1ecf7; /* Heading color */
+        }
+        .social-links {
+            list-style: none;
+            padding: 0;
+        }
+        .social-links li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .social-links img {
+            height: 20px;
+            vertical-align: middle;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #a1ecf7; /* Link color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+
+        #gymius {
+            position: relative;
+            color: #e5e5e5;
+            text-align: center;
+            padding: 20px 20px;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #gymius:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .gymius-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gymius-logo {
+            max-width: 400px; /* Adjust as needed */
+            margin: 0 auto 20px;
+        }
+
+        .gymius-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .coming-soon {
+		    font-size: 3em; /* Larger text size for 'Coming Soon' */
+		    font-weight: bold;
+		    color: #b3b3b3; /* Darker shade of gray */
+		}
+
+		#about, #contact {
+		    background: linear-gradient(to right, #00707f, #a1ecf7); /* Light to dark gradient reversed */
+		    color: white; /* Set text color to white */
+		    border-radius: 10px; /* If you want to keep the box look */
+		    position: relative; /* For the overlay */
+		}
+
+		#about:before, #contact:before {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    border-radius: 10px; /* Match the border radius of the section */
+		    z-index: 1;
+		}
+
+		#about h2, #about p, #contact h2, #contact p, .social-media {
+		    position: relative; /* Ensure text appears above the overlay */
+		    z-index: 2;
+		}
+
+
+        @media (max-width: 768px) {
+            #gymius {
+                flex-direction: column; /* Stack items vertically on small screens */
+            }
+            .coming-soon {
+                text-align: center;
+                padding-right: 0;
+                margin-top: 20px; /* Add some space between the logo and the text */
+            }
+        }
+
+        .social-links .icon {
+		    display: inline-block;
+		    font-size: 24px; /* Icon size */
+		    width: 40px; /* Width of the square */
+		    height: 40px; /* Height of the square */
+		    background-color: #a1ecf7; /* Background color */
+		    border-radius: 8px; /* Rounded edges */
+		    text-align: center;
+		    line-height: 40px; /* Center the icon vertically */
+		    margin-right: 10px; /* Space between icons */
+		}
+
+		.social-links .icon i {
+		    color: #004e5f; /* Icon color */
+		    transition: color 0.3s;
+		}
+
+		.social-links .icon:hover i {
+		    color: #e5e5e5; /* Icon hover color */
+		}
+
+		.email-link {
+		    color: #a1ecf7; /* Color to blend in with the theme */
+		    text-decoration: none; /* No underline by default */
+		    transition: text-decoration 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+		}
+
+		.email-link:hover {
+		    text-decoration: underline; /* Underline on hover */
+		}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Your logo will go here. Make sure to adjust the path to your actual logo file -->
+            <img src="logo.png" alt="Evetech Global Logo" id="logo" style="height: 50px;">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gymius">Gymius</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Welcome to Evetech Global</h1>
+            <p>Innovating for a brighter future.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });" style="background-color: #00707f; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">Learn More</button>
+        </div>
+    </header>
+    <section id="about">
+	    <h2>About Us</h2>
+	    <p>Welcome to Evetech Global – a visionary entity dedicated to the limitless possibilities of tomorrow's digital landscape. At Evetech, we navigate the ever-evolving realms of IT solutions, software development, and the integration of artificial intelligence with a focus on shaping a future where innovation knows no bounds.</p>
+	    
+	    <p>Our journey is fueled by a passion for progress and an unwavering commitment to staying at the forefront of technological advancements. We pride ourselves on being architects of change, constantly exploring new horizons and embracing the challenges that pave the way for future breakthroughs.</p>
+	    
+	    <p>As we embark on this voyage, we are thrilled to introduce our maiden creation – the GYMIUS fitness app. GYMIUS is not just an app; it's a testament to our commitment to enhancing lives through technology. Stay tuned for the imminent arrival of GYMIUS, our first step into a future where technology and workout converge.</p>
+	    
+	    <p>The future holds exciting possibilities, and at Evetech, we envision expanding our horizons to explore new avenues in the digital landscape. Our mission is to continue creating solutions that inspire and transform, making a positive impact on individuals and businesses alike.</p>
+	</section>
+    <section id="gymius">
+        <div class="gymius-content">
+            <div class="gymius-logo">
+                <img src="gymius_logo.png" alt="Gymius Logo">
+            </div>
+            <p class="coming-soon">COMING SOON...</p>
+        </div>
+    </section>
+    <section id="contact">
+	    <h2>Contact Us</h2>
+	    <p>If you have any questions or need more information, please feel free to reach out to us via email or through our social media platforms.</p>
+	    
+	    <p>Email: <a href="mailto:support@evetech.global" class="email-link">support@evetech.global</a></p>
+	</section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Evetech Global Inc</h3>
+                <p>123 Tech Avenue, Innovation City, Country</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: contact@evetechglobal.com</p>
+                <p>DUNS Number: 00-000-0000</p>
+            </div>
+            <div class="footer-section">
+			    <h3>Follow Us</h3>
+			    <ul class="social-links">
+			        <li><a href="https://www.facebook.com/profile.php?id=61550612321223" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a></li>
+			        <li><a href="https://www.pinterest.com/gymiusapp/?invite_code=bf13295110e348c1bffdce05069f7202" target="_blank" class="icon pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+			    </ul>
+			</div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            © 2023 Evetech Global. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
